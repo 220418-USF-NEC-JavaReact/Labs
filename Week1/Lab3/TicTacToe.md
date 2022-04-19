@@ -10,13 +10,13 @@
 
 3. Programatically play out the following game:
 
--   Player X plays in the exact middle spot
--   Player O plays in the middle row left column
--   Player X plays in the top row right column
--   Player O plays in the bottom row left column
--   Player X plays in the top row left column
--   Player O plays in the bottom row middle column
--   Player X plays in the top row middle column and WINS
+-   Player X plays in the exact middle spot (1,1)
+-   Player O plays in the middle row left column (1,0)
+-   Player X plays in the top row right column (0,2)
+-   Player O plays in the bottom row left column (2,0)
+-   Player X plays in the top row left column (0,0)
+-   Player O plays in the bottom row middle column (2,1)
+-   Player X plays in the top row middle column and WINS (0,1)
 
 4. While playing the above game, replace the underscores in the 2d array with the corresponding character of either player
 
