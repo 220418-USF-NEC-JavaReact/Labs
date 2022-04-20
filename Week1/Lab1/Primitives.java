@@ -1,22 +1,22 @@
 class Primitives {
 
-    public static void main(String args[]){
-        Boolean boo = true;
+    
+    boolean boo = true;
 
-        Byte maxByte = 127;
+    byte maxByte = 127;
 
-        Short minShort = -32768;
+    short minShort = -32768;
 
-        int maxInt = 2147483647;
+    int maxInt = 2147483647;
 
-        long javaFlex = 3000000000L;
+    long javaFlex = 3000000000L;
 
-        float pie = Math.round(3.14159);
+    float pie = 3.14159f;
 
-        double doubleYum = pie *2;
+    double doubleYum = 6.28318;
 
 
-    }
+    
 
 
 }
