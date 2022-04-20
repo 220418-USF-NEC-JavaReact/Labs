@@ -14,9 +14,6 @@ class Primitives {
         float pie = Math.round(3.14159);
 
         double doubleYum = pie *2;
-        System.out.println(pie);
-
-
 
 
     }
