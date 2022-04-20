@@ -12,7 +12,7 @@
 
 5. A long called `javaFlex` which stores the approximate amount of devices Java code currently runs on
 
--   (Hint) It starts with a 3
+- (Hint) It starts with a 3
 
 6. A float called `pie` which stores the value of pie to the first 5 decimals (rounded down)
 
