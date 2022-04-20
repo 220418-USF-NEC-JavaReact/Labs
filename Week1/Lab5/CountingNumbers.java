@@ -5,7 +5,21 @@ public class CountingNumbers {
 
 	// Write the code for this lab in the method below
 	public void countNumbers() {
-
+		int[] numbers = new int[100];
+		for(int a = 0; a < numbers.length; a++){
+			numbers[a] = a + 1;
+		}
+		int evenSum = 0;
+		int oddSum = 0;
+		int brake = 0;
+		while(brake < numbers.length){
+			if((numbers[brake] % 2) == 0){
+				evenSum += numbers[brake];
+			}else{
+				oddSum += numbers[brake];
+			}
+			brake++;
+		}
 		// Code for test runner, do not change
 		evenResult = evenSum;
 		oddResult = oddSum;
