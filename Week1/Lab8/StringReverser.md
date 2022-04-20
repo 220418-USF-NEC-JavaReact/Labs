@@ -4,12 +4,12 @@
 
 Create a public method called `reverse` which returns a String
 
--   The methods should take one parameter String, which is the String to be reversed
+- The methods should take one parameter String, which is the String to be reversed
 
 Using Java operators and control flow reverse the input String
 
--   As you are reversing the String, store the characters into a StringBuilder or StringBuffer
--   (Hint) This can be done with a single for loop, and no extra temporary variables
+- As you are reversing the String, store the characters into a StringBuilder or StringBuffer
+- (Hint) This can be done with a single for loop, and no extra temporary variables
 
 After the String is reversed convert the contents of the StringBuilder or Buffer into a String and return it
 
