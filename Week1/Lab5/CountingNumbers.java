@@ -18,7 +18,7 @@ public class CountingNumbers {
 
 		while (breakNum < numbers.length) {
 
-			if((numbers[breakNum] % 2) == 0){
+			if(numbers[breakNum] % 2 == 0){
 				evenSum += numbers[breakNum];
 			} else {
 				oddSum += numbers[breakNum];
