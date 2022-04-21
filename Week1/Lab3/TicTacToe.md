@@ -4,19 +4,19 @@
 
 1. Create a 2d character array called `tictactoe`
 
--   The array should model a tic tac toe board which is 3x3
+- The array should model a tic tac toe board which is 3x3
 
 2. All spaces of the board should be initialized as underscores `_`
 
 3. Programatically play out the following game:
 
--   Player X plays in the exact middle spot
--   Player O plays in the middle row left column
--   Player X plays in the top row right column
--   Player O plays in the bottom row left column
--   Player X plays in the top row left column
--   Player O plays in the bottom row middle column
--   Player X plays in the top row middle column and WINS
+- Player X plays in the exact middle spot
+- Player O plays in the middle row left column
+- Player X plays in the top row right column
+- Player O plays in the bottom row left column
+- Player X plays in the top row left column
+- Player O plays in the bottom row middle column
+- Player X plays in the top row middle column and WINS
 
 4. While playing the above game, replace the underscores in the 2d array with the corresponding character of either player
 
