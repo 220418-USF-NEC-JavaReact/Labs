@@ -58,7 +58,6 @@ class PremiumCustomer extends Customers implements Premium{
         sentence += getVipCard() + ", ";
         sentence += getYears();
         return sentence;
-    
     }
 
 }
