@@ -1,10 +1,12 @@
+import java.util.Arrays;
+
 public class PremiumCustomer extends Customers implements IPremium{
     // private properties
     private int vipCard; // card reader
     private int years; // number of yrs as premioum customer
 
     // all-args constructor
-    PremiumCustomer(String name, double balance, String[] cart, double cartCost, int vipCard, int years){
+    public PremiumCustomer(String name, double balance, String[] cart, double cartCost, int vipCard, int years){
         super(name, balance, cart, cartCost); // all-args constructor of the Customer abstract class
         this.vipCard = vipCard;
         this.years = years;
@@ -76,11 +78,11 @@ public class PremiumCustomer extends Customers implements IPremium{
     @Override
     public String toString() {
         return "Name: " + name + "\n" 
-                + "Name: " + balance + "\n"
-                + "Name: " + cart + "\n"
-                + "Name: " + cartCost + "\n"
-                + "Name: " + IPremium.title + "\n"
-                + "Name: " + vipCard + "\n"
-                + "Name: " + years + "\n";
+                + "Balance: " + balance + "\n"
+                + "Cart Items: " + Arrays.toString(cart) + "\n"
+                + "Cart cost: " + cartCost + "\n"
+                + "Premium Title: " + IPremium.title + "\n"
+                + "Cip Card: " + vipCard + "\n"
+                + "Years: " + years + "\n";
     }
 }

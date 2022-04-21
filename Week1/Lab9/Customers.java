@@ -6,7 +6,7 @@ public abstract class Customers {
     double cartCost;
 
     // all-rgs constructor
-    Customers(String name, double balance, String[] cart, double cartCost){
+    public Customers(String name, double balance, String[] cart, double cartCost){
         this.name = name;
         this.balance = balance;
         this.cart = cart;
