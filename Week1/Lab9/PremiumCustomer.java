@@ -2,7 +2,7 @@ public class PremiumCustomer extends Customers implements Premium {
     private int vipCard;    //premium member card number
     private int years;      //years listed as a premium customer
 
-    public PremiumCustomer (int vipCard, int years, String preName, double preBalance, String[] preCart, double preCartCost) {
+    public PremiumCustomer (String preName, double preBalance, String[] preCart, double preCartCost, int vipCard, int years) {
         /*if we call the all-args constructor, then we need to also 
         pass in paremeters for all states in Customers*/
         super(preName, preBalance, preCart, preCartCost);  //call to super must be the first statement???
@@ -20,7 +20,7 @@ public class PremiumCustomer extends Customers implements Premium {
         if (Premium.title.equals("cashCows")) {
             /*adjust total cost of all items in the cart*/
             setCartCost(sPrice - (sPrice*0.15));
-            return (sPrice*0.15);
+            return sPrice - (sPrice*0.15);
         }
 
         return 0.0d; //not a premium customer
@@ -30,7 +30,7 @@ public class PremiumCustomer extends Customers implements Premium {
     the customer's balance*/
     public void buy () {
         String emptyCart[] = new String[0];
-        cart = emptyCart;
+        setCart(emptyCart);
 
         /*update balance of customer*/
         setBalance(getBalance() - getCartCost());

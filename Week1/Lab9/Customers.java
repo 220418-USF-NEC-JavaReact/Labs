@@ -1,7 +1,7 @@
 public abstract class Customers {
     private String name;    //customer name
     private double balance; //spending balance
-    public String[] cart;  //list of items
+    private String[] cart;  //list of items
     private double cartCost;   //cost of items in cart
 
     //all-args constructor
@@ -58,17 +58,14 @@ public abstract class Customers {
         this.balance = balance;
     }
 
-    // public String getCart (int index) {
-    //     return cart[index];
-    // }
+     public String[] getCart () {
+         return cart;
+     }
 
-    // public void setCart (String[] cart, int index) {
-    //     this.cart = cart;
-    // }
-
-    public int getCartLength () {
-        return cart.length;
-    }
+     public void setCart (String[] cart) {
+         this.cart = new String[cart.length];
+         this.cart = cart;
+     }
 
     public double getCartCost () {
         return cartCost;
