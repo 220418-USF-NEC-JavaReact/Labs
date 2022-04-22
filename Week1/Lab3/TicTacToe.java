@@ -4,6 +4,23 @@ public class TicTacToe {
 	// Write the code for the lab in the method below
 	public void playTicTacToe() {
 
+		 char [][]tictactoe = new char[3][3];
+		  for(int row=0; row<3; row++){
+			  for(int col=0; col<3; col++){
+				  tictactoe[row][col]= '-';
+
+			  }
+		  }
+
+		  tictactoe[1][1] = 'X';
+		  tictactoe[1][0] = 'O';
+		  tictactoe[0][2] = 'X';
+		  tictactoe[2][0] = 'o';
+		  tictactoe[0][0] = 'X';
+		  tictactoe[2][1] = 'o';
+		  tictactoe[1][1] = 'X';
+
+
 		// Code for the test runner, do not change
 		this.resultArr = tictactoe;
 	}
