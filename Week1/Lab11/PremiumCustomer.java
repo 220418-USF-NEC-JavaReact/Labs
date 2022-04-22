@@ -13,10 +13,17 @@ public class PremiumCustomer extends Customers implements Premium {
 		return this.cartCost * .85;
 	}
 
-	public void buy() {
+	public void buy() throws OverBalanceException {
+		try{
+			if(this.discountPrice(cartCost) > this.balance){
+				throw new OverBalanceException();
+			}else{
+		
 		this.balance = balance - this.discountPrice(cartCost);
 		this.cart = new String[0];
 		this.cartCost = 0.0;
+			}
+		}finally{}
 	}
 
 	public String getName() {
