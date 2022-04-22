@@ -1,4 +1,4 @@
-public class PremiumCustomer extends Customers implements Premium {
+public class PremiumCustomer extends Customers implements Premium{
 
 	private int vipCard;
 	private int years;
@@ -13,10 +13,20 @@ public class PremiumCustomer extends Customers implements Premium {
 		return this.cartCost * .85;
 	}
 
-	public void buy() {
-		this.balance = balance - this.discountPrice(cartCost);
-		this.cart = new String[0];
-		this.cartCost = 0.0;
+	public void buy() throws OverBalanceException{
+		//try{
+			if(balance >= this.discountPrice(cartCost)){
+			this.balance = balance - this.discountPrice(cartCost);
+			this.cart = new String[0];
+			this.cartCost = 0.0;
+			}else{
+				throw new OverBalanceException("not enough money you twit");
+			}
+		//}catch(Exception e){
+
+		//}finally{
+
+		//}
 	}
 
 	public String getName() {
