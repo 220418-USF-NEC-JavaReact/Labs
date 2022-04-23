@@ -20,13 +20,9 @@ public class PremiumCustomer extends Customers implements Premium{
 
     @Override
     public void buy() {
-        String[] newCart = new String[0];
-        setCart(newCart);
-
-        double currentCost = getCartCost();
-        double newBalance = getBalance() - discountPrice(currentCost);
-        setBalance(newBalance);
-        setCartCost(0.0);
+        this.balance = balance - this.discountPrice(cartCost);
+		this.cart = new String[0];
+		this.cartCost = 0.0;
     }
 
     public void setName(String name) {

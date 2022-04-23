@@ -12,22 +12,13 @@ abstract class Customers {
     }
 
     public void addToCart(String item, double cost){
-        cartCost = cartCost + cost;
-        String[] newCart = new String[cart.length];
-
-        if (cart[0] == null) {
-            cart[0] = item;
-        } else {
-            for(int i = 0; i<cart.length; i++){
-                newCart[i] = cart[i];
-            }
-        }
-
-        newCart[cart.length + 1] = item;
-
-        for(int i = 0; i<newCart.length; i++){
-                cart[i] = newCart[i];
-        }
+        String[] newCart = new String[cart.length + 1];
+		for(int i = 0; i<cart.length; i++){
+			newCart[i] = cart[i];
+		}
+		newCart[cart.length] = item;
+		cart = newCart;
+		cartCost += cost;
     }
 
     public abstract void buy();
