@@ -13,7 +13,7 @@ public class CollectionsFun {
 	input: List<Person>
 	output: List<String> */
 	public List<String> nameList (List<Person> in) {
-		List<String> firstNames = new ArrayList();
+		List<String> firstNames = new ArrayList<String>();
 
 		for(Person name : in) {
 			firstNames.add(name.getFirst());
@@ -26,7 +26,7 @@ public class CollectionsFun {
 	input: List<Person>
 	output: Map<String, Person> */
 	public Map<String, Person> personMap (List<Person> in) {
-		Map<String, Person> catMap = new HashMap();
+		Map<String, Person> catMap = new HashMap<String, Person>();
 
 		for(Person cat : in) {
 			catMap.put(cat.getFirst().concat(cat.getLast()), cat);

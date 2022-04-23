@@ -22,7 +22,7 @@ public class driver {
         /*task 1 complete*/
 
         /*task 2: catMap*/
-        Map<String, Person> t2 = new HashMap();
+        Map<String, Person> t2 = new HashMap<String, Person>();
 
         t2 = global.personMap(t1A);
 
