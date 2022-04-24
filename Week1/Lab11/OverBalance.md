@@ -1,8 +1,8 @@
 # Imagine we have the following code from earlier with one small change to `Customers`
 
-java
 
-```
+
+```java
 public abstract class Customers {
 	public String name;
 	public double balance;
@@ -30,9 +30,9 @@ public abstract class Customers {
 }
 ```
 
-java
 
-```
+
+```java
 public interface Premium {
 	String title = "Premium";
 
@@ -40,9 +40,9 @@ public interface Premium {
 }
 ```
 
-java
 
-```
+
+```java
 public class PremiumCustomer extends Customers implements Premium {
 
 	private int vipCard;
