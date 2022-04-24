@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PremiumCustomer extends Customers implements Premium {
     private int vipCard;
     private int years;
@@ -73,7 +75,7 @@ public class PremiumCustomer extends Customers implements Premium {
     
     public String toString() {
 
-        return "{\nName: "+this.name+"\nBalance: "+this.balance+"\nCart: "+this.cart
+        return "{\nName: "+this.name+"\nBalance: "+this.balance+"\nCart: "+Arrays.toString(this.cart)
                 + "\nCart Cost: "+this.cartCost+"\nVip Card: "+this.vipCard
                 + "\nYears: "+this.years;
     }
