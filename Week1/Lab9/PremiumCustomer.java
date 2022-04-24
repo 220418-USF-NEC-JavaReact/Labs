@@ -73,9 +73,9 @@ public class PremiumCustomer extends Customers implements Premium {
     
     public String toString() {
 
-        return "{\nName: \nBalance: \nCart: "
-                + "\nCart Cost: \nTitle: \nVip Card: "
-                + "\nYears: ";
+        return "{\nName: "+getName()+"\nBalance: "+getBalance()+"\nCart: "+getCart()
+                + "\nCart Cost: "+getCartCost()+"\nVip Card: "+getVipCard()
+                + "\nYears: "+getYears();
     }
 
 }
