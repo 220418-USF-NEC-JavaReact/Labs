@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
-
 public class CollectionsFun {
 
 	// Fill out the class with the logic
@@ -17,15 +16,13 @@ public class CollectionsFun {
 	}
 
 	public Map<String, Person> personMap(List<Person> people) {
-		Map<String, Person> personMap = new HashMap<>();
+		Map<String, Person> personMap = new HashMap<String, Person>();
 		for(Person p : people) {
 			personMap.put(p.getFirst() + " " + p.getLast(), p);
 		}
 		return personMap;
 	}
 
-	// Uncertain why this function is not entered, I will
-	// fix at a later date.
 	public Person iteratorFun(List<Person> people) {
 		Iterator<Person> fun = people.iterator();
 		Person oldest = people.get(0);
