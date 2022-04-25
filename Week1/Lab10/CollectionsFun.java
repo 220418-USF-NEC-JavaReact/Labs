@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 public class CollectionsFun {
 
-	// Fill out the class with the logic
 	public List<String> nameList(List<Person> people) {
 		List<String> names = new ArrayList<String>();
 		for(Person p : people) {
@@ -15,6 +14,8 @@ public class CollectionsFun {
 		return names;
 	}
 
+	// It seems the problem is that this function may be returning something wrong.
+	// I can't figure out what it is for the life of me
 	public Map<String, Person> personMap(List<Person> people) {
 		Map<String, Person> personMap = new HashMap<String, Person>();
 		for(Person p : people) {
@@ -34,4 +35,6 @@ public class CollectionsFun {
 		}
 		return oldest;
 	}
+
+
 }
