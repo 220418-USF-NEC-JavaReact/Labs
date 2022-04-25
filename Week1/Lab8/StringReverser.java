@@ -3,9 +3,9 @@ public class StringReverser {
 	// Create the method to reverse a string below
 
 	public String reverse(String input){
+		
 		StringBuilder s1 = new StringBuilder(input);
 		int l1 = input.length();
-
 
 		//append reversed string to original string
 		for (int i = (l1-1); i >= 0; i--){
