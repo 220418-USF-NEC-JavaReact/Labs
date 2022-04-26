@@ -1,8 +1,4 @@
-package Week1.Lab9;
-
-import java.util.Arrays;
-import Week1.Lab9.*;
-
+import java.util.ArrayList;
 public class PremiumCustomer extends Customers implements Premium {
 
     int vipCard;
@@ -34,6 +30,7 @@ public class PremiumCustomer extends Customers implements Premium {
         return cost * 0.85;
     }
 
+    @Override
     public void buy() {
         setBalance(getBalance()-discountPrice(getCartCost()));
         String[] newCart = new String[0];
@@ -43,10 +40,17 @@ public class PremiumCustomer extends Customers implements Premium {
     }
 
     public String toString(){
+
+       String sb = new String();
+       for (int i=0;i<this.cart.length;i++) {
+           sb = cart[i] + " ";
+       }
+
+
         String objectString = "";
         objectString += "Name: " + getName() + "\n";
         objectString += "Balance: " + getBalance() + "\n";
-        objectString += "Cart: " + Arrays.toString(getCart()) + "\n";
+        objectString += "Cart: " + sb + "\n";
         objectString += "Cart Cost: " + getCartCost() + "\n";
         objectString += "VIP Card: " + getVipCard() + "\n";
         objectString += "Years Customer: " + getYears() +"\n";

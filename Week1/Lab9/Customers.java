@@ -1,6 +1,4 @@
-package Week1.Lab9;
-
-abstract class Customers {
+public abstract class Customers {
 
     public String name;
     public double balance;
@@ -52,10 +50,11 @@ abstract class Customers {
         cartCost += cost;
         int newCartLength = cart.length + 1;
         String[] newCart = new String[newCartLength];
-        for (int i = 0; i < newCartLength; i++) {
+        for (int i = 0; i < cart.length; i++) {
             newCart[i] = cart[i];
         }
-        newCart[newCartLength] = item;
+        newCart[cart.length] = item;
+
 
         setCart(newCart);
 
