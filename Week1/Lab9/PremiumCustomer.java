@@ -1,32 +1,32 @@
 public class PremiumCustomer extends Customers implements Premium  {
-    public PremiumCustomer(String name, double balance, String[] cart, double cartCost, int vipCard, int years) {
+    private int vipCard;
+    private int years;
 
+    public PremiumCustomer (String name, double balance, String[] cart, double cartCost, int vipCard, int years) {
         super(name, balance, cart, cartCost);
         this.vipCard = vipCard;
         this.years = years;
     }
 
-    @Override
+    public double discountPrice(double startingPrice) {
+        return .85 * startingPrice;
+    }
+
     public void buy() {
-        cart = new String[0];
         balance -= discountPrice(cartCost);
+        cart = new String[0];
         cartCost = 0;
     }
 
-    @Override
-    public double discountPrice(double itemCost) {
-        return itemCost - (itemCost * 0.15);
+    // GETTERS
+    public int getVipCard() {
+        return vipCard;
     }
 
-    @Override
-    public String toString() {
-        String cartStr = "";
-        for(int i = 0; i < cart.length; i++) {
-            cartStr += cart[i] + " ";
-        }
-        return super.name + " " + super.balance + " " + cartStr + super.cartCost + " " + title + " " + vipCard + " " + years;
+    public int getYears() {
+        return years;
     }
-    
+
     public String getName() {
         return super.name;
     }
@@ -43,12 +43,13 @@ public class PremiumCustomer extends Customers implements Premium  {
         return super.cartCost;
     }
 
-    public int getVipCard() {
-        return vipCard;
+    // SETTERS
+    public void setVipCard(int vipCard) {
+        this.vipCard = vipCard;
     }
 
-    public int getYears() {
-        return years;
+    public void setYears(int years) {
+        this.years = years;
     }
 
     public void setName(String name) {
@@ -67,11 +68,15 @@ public class PremiumCustomer extends Customers implements Premium  {
         this.cartCost = cartCost;
     }
 
-    public void setVipCard(int vipCard) {
-        this.vipCard = vipCard;
-    }
-
-    public void setYears(int years) {
-        this.years = years;
+    // Overriding the toString method
+    @Override
+    public String toString() {
+        String cartStr = "";
+        for(int i = 0; i < super.cart.length; i++) {
+            cartStr += cart[i] + " ";
+        }
+        return super.name + " " + super.balance + " " + 
+                    cartStr + super.cartCost + " " + 
+                    vipCard + " " + years;
     }
 }

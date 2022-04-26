@@ -1,6 +1,7 @@
 public interface Premium {
     
-    public final static String title = "Premium Subscriber";
-    public double discountPrice(double itemCost);
+    public final static String title = "premium subscriber";
+
+    public double discountPrice(double startingPrice);
 
 }
