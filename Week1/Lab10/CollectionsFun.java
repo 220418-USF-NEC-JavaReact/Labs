@@ -1,4 +1,4 @@
-
+import java.util.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -40,17 +40,21 @@ public class CollectionsFun {
     // loop through the list with the iterator, and keep track of the oldest person
     // return oldest Person
     public Person iteratorFun(List<Person> persons) {
-        Iterator<Person> itr = persons.iterator();
 
-        int maxim = Integer.MIN_VALUE;
+        Iterator<Person> itr = persons.iterator();
         Person pers = new Person();
-        while (itr.hasNext()) {
-            if (itr.next().getAge() > maxim) {
-                maxim = itr.next().getAge();
-                pers = itr.next();
-            } 
+        Person persOld = new Person();
+        int maxim = Integer.MIN_VALUE;
+
+        while(itr.hasNext()) {
+            pers = itr.next();
+            if (pers.getAge() > maxim) {
+                maxim = pers.getAge();
+                persOld = pers;
+            }
         }
-        return pers;
+
+        return persOld;
     }
 
 }

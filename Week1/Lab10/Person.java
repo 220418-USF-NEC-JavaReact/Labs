@@ -9,8 +9,7 @@ public class Person {
         this.age = age;
     }
 
-    public Person() {
-    }
+    public Person(){}
 
     public String getFirst() {
         return first;
@@ -35,4 +34,16 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // @Override
+    // public String toString() {
+    //     return this.getFirst() + " " + this.getLast() + " " + this.getAge();
+    // }
+
+    //overriding the toString() method
+	@Override
+	public String toString()
+	{
+		return this.first + " " + this.last + " " + this.age;
+	}
 }
