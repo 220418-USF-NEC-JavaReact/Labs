@@ -3,6 +3,8 @@ public class PremiumCustomer extends Customers implements Premium {
 	private int vipCard;
 	private int years;
 
+
+
 	public PremiumCustomer(String name, double balance, String[] cart, double cartCost, int vipCard, int years) {
 		super(name, balance, cart, cartCost);
 		this.vipCard = vipCard;
@@ -13,8 +15,13 @@ public class PremiumCustomer extends Customers implements Premium {
 		return this.cartCost * .85;
 	}
 
-	public void buy() {
-		this.balance = balance - this.discountPrice(cartCost);
+	public void buy() throws OverBalanceException {
+		if (balance >= this.discountPrice(cartCost)) {
+			this.balance = balance - this.discountPrice(cartCost);
+		}
+		else {
+			throw new OverBalanceException("There is not enough money in the balance");
+		}
 		this.cart = new String[0];
 		this.cartCost = 0.0;
 	}
