@@ -27,8 +27,8 @@ public class CollectionsFun {
 	public Person iteratorFun(List<Person> pList){
 		Iterator<Person> it = pList.iterator();
 		int index = 0;
-		int oldAge = 0;
-		Person oldest = null;
+		int oldAge = pList.get(0).getAge();
+		Person oldest = pList.get(0);
 		while (it.hasNext()){
 			if(pList.get(index).getAge() > oldAge){
 				oldAge = pList.get(index).getAge();

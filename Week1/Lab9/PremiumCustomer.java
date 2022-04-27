@@ -54,6 +54,7 @@ public class PremiumCustomer extends Customers implements Premium {
     public void setYears(int years){
         this.years = years;
     }
+    @Override
     public String toString(){
         String cartConglom = "";
         for(int i=0; i < this.cart.length; i++){
