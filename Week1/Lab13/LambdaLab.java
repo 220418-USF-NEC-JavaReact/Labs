@@ -47,7 +47,7 @@ public class LambdaLab {
             buff.append(n);
             buff.reverse();
             r1.add(buff.toString());
-            buff.delete(0, buff.length());
+            buff.delete(0, buff.length()); //clear the buffer
 
         } );
 
