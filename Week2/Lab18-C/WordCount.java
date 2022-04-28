@@ -8,27 +8,21 @@ public class WordCount {
 
     //Provide the logic to the problem in the method below
     public Map<String, Integer> count(String input){
+        
         Map<String, Integer> results = new HashMap<>();
         String getWords = input.toLowerCase();
         String[] words = getWords.split(" ");
-        List<String> index = new ArrayList<String>();
+     
         for(int i = 0; i < words.length; i++){
-            if (!index.contains(words[i])){
-                index.add(words[i]);
-            }
+            // Since HashMap does not allow duplicate keys(Stirng in this case)
+            // New value would repalce old value
+           if (results.containsKey(words[i])){
+               results.put(words[i], results.get(words[i])+1);
+           }else{
+               results.put(words[i], 1);
+           }
         }
-        int count = 0;
-        for (String word: index){
-            for(int i = 0; i < getWords.length(); i++){
-                if (word.equals(words[i])){
-                    count++;
-                }
-            }
-            results.put(word, count);
-            count = 0;
-        }
-
-
-            return results;
+    
+        return results;
     }
 }
