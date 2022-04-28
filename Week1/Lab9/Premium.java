@@ -4,4 +4,6 @@ public interface Premium {
 
     public double discountPrice(double startingPrice);
 
+    
+
 }
