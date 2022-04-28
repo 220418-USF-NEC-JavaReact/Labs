@@ -11,6 +11,7 @@ public class Triplets {
                 points[1]++;
             }
         }
-        
+        return points;
+        //Lab15-C
     }
 }
