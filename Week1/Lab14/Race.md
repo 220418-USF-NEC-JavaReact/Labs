@@ -12,7 +12,7 @@ The method should return the String
 
 -   "Kid 1" if the first kid is closer to the truck
 -   "Kid 2" if the second kid is closer to the truck
--   "Truck" if the kids are the same disance from the truck
+-   "Truck" if the kids are the same distance from the truck
 
 ## Example
 
