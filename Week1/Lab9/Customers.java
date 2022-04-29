@@ -12,12 +12,12 @@ abstract class Customers{
         this.cartCost = cartCost;
     }
 
-    public static void addToCart(String item, double cost){
+    public void addToCart(String item, double cost){
 
-        String[] temp;
+        String[] temp = new String[0];
         cartCost = cartCost + cost;
 
-        for(int i = 0; i < cart.length, i++){
+        for(int i = 0; i < cart.length; i++){
             temp[i] = cart[i];
             
         }

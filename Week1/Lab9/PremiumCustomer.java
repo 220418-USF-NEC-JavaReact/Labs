@@ -1,4 +1,4 @@
-class PremiumCustomer extends Customers implements Premium{
+public class PremiumCustomer extends Customers implements Premium{
 
     private int vipCard;
     private int years;
@@ -22,8 +22,9 @@ class PremiumCustomer extends Customers implements Premium{
         balance = balance - discountPrice(cartCost);
        String[] newCart = new String[0];
        cart = newCart;
+       cartCost = 0.0;
     }
-       //Getters and Setters FML
+       //Getters and Setters
 
        public String getName(){
            return this.name;
@@ -34,16 +35,16 @@ class PremiumCustomer extends Customers implements Premium{
        }
 
         public double getBalance(){
-           return this.getBalance;
+           return this.balance;
        }
         public void setBalance(double balance){
            this.balance = balance;
        }
 
-        public String getCart(){
+        public String[] getCart(){
            return this.cart;
        }
-       public void setCart(String cart){
+       public void setCart(String[] cart){
            this.cart = cart;
        }
 
@@ -68,7 +69,25 @@ class PremiumCustomer extends Customers implements Premium{
            this.years = years;
        }
 
+    @Override
+    public String toString(){
 
+        String[] cart2;
+        cart2 = getCart();
+        for(String item: cart2){
+        System.out.println("Cart item: " + item);
+        }
+
+        return "User:{\n\t"
+        + "name:" + name + "\n\t"
+        + "balance:" + balance + "\n\t"
+        + "cartCost:" + cartCost + "\n\t"
+        + "title:" + title + "\n\t"
+        + "vipCard:" + vipCard + "\n\t"
+        + "years:" + years + "\n" +
+         "}";
+    
+    } 
+}
     
 
-}
