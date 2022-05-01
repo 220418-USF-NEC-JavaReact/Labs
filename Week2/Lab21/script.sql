@@ -27,3 +27,5 @@ WHERE location =1 OR department=1
 INTERSECT
 SELECT * FROM employee 
 WHERE department =1;
+
+--Milan
