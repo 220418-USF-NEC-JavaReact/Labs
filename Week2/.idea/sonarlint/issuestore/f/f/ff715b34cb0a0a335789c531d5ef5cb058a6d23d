@@ -1,0 +1,12 @@
+
+P
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+b
+java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(õÉŒ¢ûÿÿÿÿ
+b
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(õÉŒ¢ûÿÿÿÿ
+b
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(œ©ûÿÿÿÿ
+U
+java:S1118
+":Add a private constructor to hide the implicit public one.(İµï„üÿÿÿÿ

@@ -1,0 +1,13 @@
+
+u
+java:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "sr".(¯¬Ãêøÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
+u
+java:S1149$"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+z
+java:S1149*"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ë¤Éùÿÿÿÿ
+L
+java:S1854$"6Remove this useless assignment to local variable "sb".(í…Ò‰
+=
+java:S1481$"'Remove this unused "sb" local variable.(í…Ò‰
