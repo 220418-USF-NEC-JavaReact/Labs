@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 26</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Spectral&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- <input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style="width:85%;" data-com.bitwarden.browser.user-edited="yes"> -->
+    <h1>Group Favorite Color</h1>
+    <form id="name-color-form">
+      <label for="Name">Enter your name</label>
+      <input name="name" type="text" id="input-name"/>
+
+      <label for="Color">Choose your favorite color</label>
+      <input
+        type="color"
+        id="html5colorpicker"
+        onchange="clickColor(0, -1, -1, 5)"
+        value="#ff0000"
+        style="width: 5%"
+      />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <ul id="item-list">
+
+    </ul>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
