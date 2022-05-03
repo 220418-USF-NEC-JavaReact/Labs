@@ -1,7 +1,15 @@
 
-Z
-java:S1854"?Remove this useless assignment to local variable "personsList".(•«ô¥ıÿÿÿÿ
 E
-java:S1197"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
-K
-java:S1481"0Remove this unused "personsList" local variable.(•«ô¥ıÿÿÿÿ
+java:S1197"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+S
+java:S1611"1Remove the parentheses around the "ctx" parameter(ßÅØÅùÿÿÿÿ8‚Ò ˆˆ0
+N
+java:S1611#"1Remove the parentheses around the "ctx" parameter(¡ä¹ã8‡Ò ˆˆ0
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(úõ–áùÿÿÿÿ8ŞÒ ˆˆ0
+S
+java:S1611+"1Remove the parentheses around the "ctx" parameter(ı‹ÙÒÿÿÿÿÿ8ßÒ ˆˆ0
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(úõ–áùÿÿÿÿ8áÒ ˆˆ0
+S
+java:S16114"1Remove the parentheses around the "ctx" parameter(áÁ¯æÿÿÿÿÿ8âÒ ˆˆ0
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(ö¡¹ê8ãÒ ˆˆ0
+]	java:S1257"<This block of commented-out lines of code should be removed.(´¿³¸üÿÿÿÿ8äÒ ˆˆ0
