@@ -1,10 +1,15 @@
 package com.revature.dao;
 
 import com.revature.models.Person;
+import com.revature.utils.ConnectionUtil;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class PersonDAO implements IPersonDao{
+    public ConnectionUtil conSignal = ConnectionUtil.getConnectionUtil();
 
     /**
      * TODO FILL OUT THE CREATEPERSON METHOD
@@ -12,7 +17,16 @@ public class PersonDAO implements IPersonDao{
      */
     @Override
     public void createPerson(Person p) {
+        Connection c = conSignal.getConnection();
 
+        String sql = "insert into Person (id, name, email, social, address) values ('36', '" + p.getName() + "', '" + p.getEmail() + "', '" + p.getSocialsecurity() + "', '" + p.getAddress() + "')";
+
+        try {
+            Statement s = c.createStatement();
+            s.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

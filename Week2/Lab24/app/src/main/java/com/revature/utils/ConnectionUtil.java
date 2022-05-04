@@ -10,8 +10,8 @@ public class ConnectionUtil {
 
     private static final String USER = "lab";
     private static final String PASS = "pass";
-    private static final String DRIVER = "com.h2database.Driver";
-    private static final String URL = "jdbc:h2:~/person";
+    //private static final String DRIVER = "com.h2database.Driver";
+    private static final String URL = "jdbc:postgresql://localhost:5432/lab24";
 
     private ConnectionUtil(){
 
@@ -26,6 +26,7 @@ public class ConnectionUtil {
 
     public Connection getConnection(){
         Connection c = null;
+
         try{
             c = DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException e) {
