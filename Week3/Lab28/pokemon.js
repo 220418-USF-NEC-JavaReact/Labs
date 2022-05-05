@@ -1,14 +1,16 @@
 
 let appendPokemon = (data) => {
-    let div = document.getElementById("pokemon-object");
+    let div = document.getElementById("pokemon-container");
     let name = data.name;
     let image = data.sprites.front_shiny;
     let nametag = document.createElement("p");
     let imagetag = document.createElement("img");
     nametag.innerText = name;
     imagetag.setAttribute("src", image);
-    div.appendChild(nametag);
-    div.appendChild(imagetag);
+    //div.appendChild(nametag);
+    //div.appendChild(imagetag);
+    div.prepend(nametag);
+    div.prepend(imagetag);
 
     
 
