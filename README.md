@@ -1,5 +1,5 @@
 # Labs
-Repository for the coding labs and practice for 220418-USF-NEC-JavaReact batch
+Repository for the coding labs and practice for 220418-USF-NEC-JavaReact batch.
 
 Labs are a great way for you to get your hands onto the technology you are training on. Inside of this repository you will find coding prompts that correspond with the technology you are learning. Complete the tasks specifed and run the testing file to see if you have completed the lab.
 
