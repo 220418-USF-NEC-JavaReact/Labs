@@ -1,0 +1,9 @@
+
+[
+java:S2095"EUse try-with-resources or close this "Javalin" in a "finally" clause.(лсьќ
+B
+java:S1602",Remove useless curly braces around statement(лсьќ
+i
+java:S1612"SReplace this lambda with method reference 'JavalinConfig::enableCorsForAllOrigins'.(лсьќ
+G
+java:S1602",Remove useless curly braces around statement(њсмющ€€€€
