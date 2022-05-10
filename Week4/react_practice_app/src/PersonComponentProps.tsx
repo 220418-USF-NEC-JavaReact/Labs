@@ -38,7 +38,7 @@ export default class PersonComponentProps extends React.Component<IPeople, IPeop
                 <div className='movies'>
                     <h2>Moives</h2>
                     <p>{this.state.favoriteMovies[0]}</p>
-                   
+                    <p>{this.state.favoriteMovies[1]}</p>
                 </div>
             </div>
         )
