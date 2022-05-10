@@ -11,11 +11,11 @@ l
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 [
 +app/src/test/java/revature/com/AppTest.java,3\b\3b606d0528aeda31b05a5faf6436f6053b049a11
-h
-8app/src/main/java/revature/com/models/RegisterUsers.java,a\5\a56a155ea27f1b99f44aa96337ca721cca254737
 e
 5app/src/main/java/revature/com/models/LoginUsers.java,f\e\fee6b8320da31286514385b56cd62c8f3c5f6615
 `
 0app/src/main/java/revature/com/models/Users.java,7\1\7167a6c98bd58a6bd39619967c14da47f6fa25f6
+`
+0app/src/main/java/revature/com/dao/IUserDao.java,2\4\246b5dfc47b4a8fddaa213a94d01e2904604c527
 h
-8app/src/main/java/revature/com/services/UserService.java,5\0\502956eea1a856e8e97d86e3391e4f85d84512da
+8app/src/main/java/revature/com/models/RegisterUsers.java,a\5\a56a155ea27f1b99f44aa96337ca721cca254737

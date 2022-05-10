@@ -48,6 +48,9 @@ public class UserController {
             ctx.status(403);
             ctx.result("Username or password was incorrect");
         } else {
+            // Write the method which return id
+
+            //
             //We could also, if the user is logged in successfully, set up a session for them
             ctx.req.getSession().setAttribute("username", ""+u.getUsername());
             ctx.result(om.writeValueAsString(u.getUsername() + " has been login. "));

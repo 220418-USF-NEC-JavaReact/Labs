@@ -24,7 +24,9 @@ public class UserService {
 
         Users user = null;
         if(user!=null){
+            // Write the method to return password
             if(password.equals(user.getPassword())){
+
                 return user;
             } else {
                 return null;
