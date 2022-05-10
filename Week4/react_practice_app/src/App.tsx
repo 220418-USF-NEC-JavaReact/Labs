@@ -2,6 +2,7 @@ import React from 'react';
 import { IPeople } from './interfaces/IPeople';
 import PersonComponent from './personComponent';
 import PersonComponentProps from './PersonComponentProps';
+import './App.css'
 
 
 function App() {

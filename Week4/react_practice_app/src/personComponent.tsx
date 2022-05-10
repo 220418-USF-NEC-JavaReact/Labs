@@ -12,8 +12,9 @@ export default class PersonComponent extends React.Component {
     render(): React.ReactNode {
         return(
             <div>
+                <div id="name_area">
                 <h1>Person: {this.person.firstName} {this.person.lastName}</h1>
-                
+                </div>
                 <div className='bio'>
                     <h2>BIO</h2>
                     <p>{this.person.bio}</p>

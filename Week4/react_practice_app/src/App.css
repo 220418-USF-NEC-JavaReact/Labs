@@ -1,0 +1,38 @@
+h1 {
+    color: green;
+
+    text-align: center;
+    background-color: aqua;
+    width: 50%;
+    border: 3px solid green;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#name_area{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+
+body {
+  background-color: darkorange;
+
+}
+.bio, .movies{
+  text-align: center;
+}
+.bio {
+  background-color: chartreuse;
+  margin-left: auto;
+  width: 50%;
+    margin-right: auto;
+
+}
+.movies{
+  background-color: aquamarine;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
