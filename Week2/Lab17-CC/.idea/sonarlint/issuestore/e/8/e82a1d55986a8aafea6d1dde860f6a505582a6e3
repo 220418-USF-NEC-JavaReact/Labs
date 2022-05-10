@@ -1,7 +1,18 @@
 
-Z
-java:S1854"?Remove this useless assignment to local variable "personsList".(•«ô¥ıÿÿÿÿ
 E
-java:S1197"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
-K
-java:S1481"0Remove this unused "personsList" local variable.(•«ô¥ıÿÿÿÿ
+java:S1197"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+B
+java:S1602"",Remove useless curly braces around statement(ëñüÎ
+i
+java:S1612""SReplace this lambda with method reference 'JavalinConfig::enableCorsForAllOrigins'.(ëñüÎ
+F
+java:S1611*"1Remove the parentheses around the "ctx" parameter(Ê•ö
+L
+java:S1611-"1Remove the parentheses around the "ctx" parameter(‹ñ²Óıÿÿÿÿ
+A
+java:S14812"+Remove this unused "person" local variable.(Òà‹È
+>	java:S1082")Either remove or fill this block of code.(Òà‹È
+G
+java:S1611;"1Remove the parentheses around the "ctx" parameter(ÌÔÆ
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(œ•é‹
+V	java:S125I"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ
