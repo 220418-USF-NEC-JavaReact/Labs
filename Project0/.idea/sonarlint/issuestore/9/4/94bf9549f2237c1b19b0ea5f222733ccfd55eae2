@@ -1,0 +1,22 @@
+
+w
+java:S1488a"bImmediately return this expression instead of assigning it to the temporary variable "successful".(İ‘‹
+w
+java:S1488q"bImmediately return this expression instead of assigning it to the temporary variable "successful".(İ‘‹
+b
+java:S2095:"GUse try-with-resources or close this "Statement" in a "finally" clause.(—ö–›ùÿÿÿÿ
+]
+java:S2095N"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
+j
+java:S2095^"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+]
+java:S2095%"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+j
+java:S2095n"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+]
+java:S20959"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(Âé’ùÿÿÿÿ
+A
+java:S11680"+Return an empty collection instead of null.(¥¹ï

@@ -1,0 +1,18 @@
+
+p
+java:S1104"ZMake handleRegister a static final constant or non-public and provide accessors if needed.(ÿ§¶
+m
+java:S1104"WMake handleLogin a static final constant or non-public and provide accessors if needed.(Öª‰
+s
+java:S1104+"XMake handleLogout a static final constant or non-public and provide accessors if needed.(Ö€ãøÿÿÿÿ
+y
+java:S11044"cMake handleGetUserByUserName a static final constant or non-public and provide accessors if needed.(Ì²Á
+G
+java:S1611"1Remove the parentheses around the "ctx" parameter(ÿ§¶
+V	java:S125"<This block of commented-out lines of code should be removed.(÷šœúÿÿÿÿ
+G
+java:S1611"1Remove the parentheses around the "ctx" parameter(Öª‰
+a
+java:S2147&"DCombine this catch with the one at line 36, which has the same body.(şÙõ£8‚ÃƒŞŠ0
+L
+java:S1611+"1Remove the parentheses around the "ctx" parameter(Ö€ãøÿÿÿÿ
