@@ -38,15 +38,15 @@ public class Driver
         server.routes(()->{
             path("user",()->{
                 post("/register",uc.handleRegister);
-                get("login",uc.handleLogin);
-                get("logout",uc.handleLogout);
-                get("accountInfo",uc.handleAccountInfo);
-                get("allAccountInfo",uc.handleAllAccountInfo);
-                post("updateInfo",uc.handleUpdateUserInfo);
+                post("/login",uc.handleLogin);
+                get("/logout",uc.handleLogout);
+                get("/accountInfo/{username}",uc.handleAccountInfo);
+                get("/allAccountInfo",uc.handleAllAccountInfo);
+                post("/updateInfo",uc.handleUpdateUserInfo);
             });
             path("reimbursement",()->{
                 post("/submit",rc.handleSubmit);
-                get("/show",rc.handleSingleUserReimbursement);
+                post("/show",rc.handleSingleUserReimbursement);
                 get("/showAll",rc.handleAllUsersReimbursement);
                 put("/updateRequest", rc.handleUpdateRequest);
             });
@@ -56,9 +56,11 @@ public class Driver
             ctx.result(e.getMessage());
         });
         server.exception(UserNotFoundException.class, (e,ctx) ->{
+           ctx.status(401);
            ctx.result(e.getMessage());
         });
         server.exception(PasswordIncorrectException.class, (e,ctx) ->{
+            ctx.status(401);
             ctx.result(e.getMessage());
         });
 

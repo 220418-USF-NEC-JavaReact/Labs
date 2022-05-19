@@ -5,6 +5,8 @@ import com.revature.models.Reimbursement;
 import com.revature.services.ReimbursementService;
 import io.javalin.http.Handler;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -17,23 +19,29 @@ public class ReimbursementController {
         this.om = new ObjectMapper();
     }
     public Handler handleSubmit = ctx -> {
+
         Reimbursement r = om.readValue(ctx.body(), Reimbursement.class);
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        om.setDateFormat(df);
+
         if(ctx.req.getSession().getAttribute("userId") == null){
             ctx.result("You must login first.");
         } else {
             int userId = (int)ctx.req.getSession().getAttribute("userId");
-            rs.submitReimburse(r,userId);
-            ctx.result("Reimbursement submitted.");
+            Reimbursement reimburse = rs.submitReimburse(r,userId);
+            ctx.result(om.writeValueAsString(reimburse));
         }
     };
     public Handler handleSingleUserReimbursement = ctx -> {
-        Map<String,String> map = om.readValue(ctx.body(), Map.class);
+        Reimbursement reimburse = om.readValue(ctx.body(), Reimbursement.class);
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        om.setDateFormat(df);
         if(ctx.req.getSession().getAttribute("userId") == null){
             ctx.result("User must login.");
-        } else if(!ctx.req.getSession().getAttribute("role").equals("Manager")){
-            ctx.result("Only manager can see different users reimbursement request.");
         } else {
-            List<Reimbursement> rList = rs.getSingleUserReimbursement(map.get("username"));
+            String username = (String) ctx.req.getSession().getAttribute("username");
+            reimburse.setReimburseAuthor(username);
+            List<Reimbursement> rList = rs.getSingleUserReimbursement(reimburse);
             ctx.result(om.writeValueAsString(rList));
         }
     };

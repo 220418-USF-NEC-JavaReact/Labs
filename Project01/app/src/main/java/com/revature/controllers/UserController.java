@@ -34,7 +34,7 @@ public class UserController {
             ctx.req.getSession().setAttribute("userId", user.getUserId());
             ctx.req.getSession().setAttribute("username", user.getUsername());
             ctx.req.getSession().setAttribute("role", user.getRole());
-            ctx.result("Login successful.");
+            ctx.result(om.writeValueAsString(user));
         } catch (UserNotFoundException e){
             throw e;
         } catch (PasswordIncorrectException e){
@@ -50,10 +50,15 @@ public class UserController {
         }
     };
     public Handler handleAccountInfo = ctx -> {
+        String user_name = ctx.pathParam("username");
         String username = (String) ctx.req.getSession().getAttribute("username");
-        if(username == null){
+        //int userId = (int) ctx.req.getSession().getAttribute("userId");
+        /*if(username == null){
             ctx.result("First login to see account info.");
-        } else {
+        }*/
+        if(!username.equals(user_name)){
+            ctx.status(401);
+        }else {
             User user = us.getAccountInfo(username);
             ctx.result(om.writeValueAsString(user));
         }

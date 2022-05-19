@@ -23,7 +23,6 @@ public class UserService {
     }
     public User loginUser(User user) throws UsernameOrPasswordIncorrectException {
         User u = userDao.getUser(user.getUsername());
-
         if(u == null){
             throw new UserNotFoundException();
         }

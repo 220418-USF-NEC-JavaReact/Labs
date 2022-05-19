@@ -5,7 +5,8 @@ import com.revature.models.Reimbursement;
 import java.util.List;
 
 public interface IReimbursementDao {
-    List<Reimbursement> get(String username);
+    Reimbursement get(int userId);
+    List<Reimbursement> get(Reimbursement r);
     List<Reimbursement> getAll(int userId, String status);
     List<Reimbursement> getAll(String status);
 

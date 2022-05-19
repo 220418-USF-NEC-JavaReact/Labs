@@ -10,11 +10,12 @@ public class ReimbursementService {
     public ReimbursementService(IReimbursementDao rDao){
         this.rDao = rDao;
     }
-    public void submitReimburse(Reimbursement r, int userId){
+    public Reimbursement submitReimburse(Reimbursement r, int userId){
         rDao.create(r, userId);
+        return rDao.get(userId);
     }
-    public List<Reimbursement> getSingleUserReimbursement(String username){
-        return rDao.get(username);
+    public List<Reimbursement> getSingleUserReimbursement(Reimbursement r){
+        return rDao.get(r);
     }
     public List<Reimbursement> getAllUsersReimbursement(String status){
         return rDao.getAll(status);

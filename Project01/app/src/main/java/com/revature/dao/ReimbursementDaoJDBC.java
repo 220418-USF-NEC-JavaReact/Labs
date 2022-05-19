@@ -10,18 +10,44 @@ import java.util.Date;
 
 public class ReimbursementDaoJDBC implements IReimbursementDao{
     private ConnectionSingleton cs = ConnectionSingleton.getConnectionSingleton();
-    @Override
-    public List<Reimbursement> get(String username) {
+
+    public Reimbursement get(int userId) {
         Connection con = cs.getConnection();
         String sql = "select r.reimburse_id, r.amount, r.submitted_date, r.resolved_date, r.description, u1.user_name, u2.user_name, rs.status, rt.type" +
                 " from users u1, users u2, reimbursement r, reimburse_status rs, reimburse_type rt " +
                 "where r.reimburse_status = rs.status_id and r.reimburse_type = rt.type_id and r.reimburse_author = u1.user_id " +
-                "and r.reimburse_resolver = u2.user_id and u1.user_name = ?";
+                "and r.reimburse_resolver = u2.user_id and r.reimburse_author = ? order by r.reimburse_id desc limit 1";
+
         try{
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,username);
+            ps.setInt(1,userId);
+            ResultSet rs = ps.executeQuery();
+
+            Reimbursement reimburse = null;
+            while (rs.next()){
+                reimburse = new Reimbursement(rs.getInt(1),rs.getDouble(2),rs.getDate(3),rs.getDate(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
+            }
+            return reimburse;
+        } catch (Exception e){
+            return null;
+        }
+    }
+    @Override
+    public List<Reimbursement> get(Reimbursement r) {
+        Connection con = cs.getConnection();
+        String sql = "select r.reimburse_id, r.amount, r.submitted_date, r.resolved_date, r.description, u1.user_name, u2.user_name, rs.status, rt.type" +
+                " from users u1, users u2, reimbursement r, reimburse_status rs, reimburse_type rt " +
+                "where r.reimburse_status = rs.status_id and r.reimburse_type = rt.type_id and r.reimburse_author = u1.user_id " +
+                "and r.reimburse_resolver = u2.user_id and u1.user_name = ? and rs.status = ?";
+
+
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,r.getReimburseAuthor());
+            ps.setString(2, r.getReimburseStatus());
             ResultSet rs = ps.executeQuery();
             List<Reimbursement> reimburseList = new ArrayList<>();
+
             while (rs.next()){
                 Reimbursement reimburse = new Reimbursement(rs.getInt(1),rs.getDouble(2),rs.getDate(3),rs.getDate(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
                 reimburseList.add(reimburse);

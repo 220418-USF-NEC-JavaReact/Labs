@@ -1,6 +1,7 @@
 
 _
-java:S1192#"IDefine a constant instead of duplicating this literal "username" 4 times.(ø¹±
+java:S1192#"IDefine a constant instead of duplicating this literal "username" 5 times.(ø¹±
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ª½¿8£ÿÊšŒ0
 u
 java:S1104"ZMake handleRegister a static final constant or non-public and provide accessors if needed.(ÔŒâ„ıÿÿÿÿ
 r
@@ -10,12 +11,13 @@ java:S1104,"XMake handleLogout a static final constant or non-public and provid
 r
 java:S11044"]Make handleAccountInfo a static final constant or non-public and provide accessors if needed.(Ü¬Á
 v
-java:S1104="`Make handleAllAccountInfo a static final constant or non-public and provide accessors if needed.(Š°³š
+java:S1104B"`Make handleAllAccountInfo a static final constant or non-public and provide accessors if needed.(Š°³š
 v
-java:S1104I"`Make handleUpdateUserInfo a static final constant or non-public and provide accessors if needed.(ã‹š
+java:S1104N"`Make handleUpdateUserInfo a static final constant or non-public and provide accessors if needed.(ã‹š
 m
 java:S2737"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
 Z
 java:S2147("DCombine this catch with the one at line 38, which has the same body.(şÙõ£
+X	java:S1257"<This block of commented-out lines of code should be removed.(Œ„ûì8¯ºÉšŒ0
 X
-java:S1128"6Remove this unused import 'com.revature.dao.IUserDao'.(‚û„»ûÿÿÿÿ8ã§«£‹0
+java:S1128"6Remove this unused import 'com.revature.dao.IUserDao'.(‚û„»ûÿÿÿÿ8 æÌšŒ0

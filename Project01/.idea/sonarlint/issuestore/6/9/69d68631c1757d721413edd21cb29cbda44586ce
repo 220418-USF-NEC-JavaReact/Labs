@@ -1,12 +1,12 @@
 
 j
-java:S2095S"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
-]
-java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
 j
 java:S2095@"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
 j
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+java:S2095S"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+]
+java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
 7
 java:S1116-"Remove this empty statement.(ÍäÎËúÿÿÿÿ
 A
