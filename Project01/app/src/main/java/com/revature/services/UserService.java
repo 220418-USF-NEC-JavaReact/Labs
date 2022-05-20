@@ -1,10 +1,7 @@
 package com.revature.services;
 
 import com.revature.dao.IUserDao;
-import com.revature.exceptions.DuplicateUsernameException;
-import com.revature.exceptions.PasswordIncorrectException;
-import com.revature.exceptions.UserNotFoundException;
-import com.revature.exceptions.UsernameOrPasswordIncorrectException;
+import com.revature.exceptions.*;
 import com.revature.models.User;
 
 import java.util.List;
@@ -37,7 +34,13 @@ public class UserService {
     public List<User> getAllAccountInfo(){
         return userDao.getAllUsers();
     }
-    public void updateUserInfo(User user){
-        userDao.updateUser(user);
+    public User updateUserInfo(User user) throws UsernameOrEmailIncorrectException{
+        try{
+            userDao.updateUser(user);
+            return userDao.getUser(user.getUserId());
+        } catch(UsernameOrEmailIncorrectException e){
+            throw e;
+        }
+
     }
 }

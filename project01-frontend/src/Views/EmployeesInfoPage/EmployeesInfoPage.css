@@ -1,7 +1,9 @@
-.login-page {
+.info-div {
     display: flex;
-    height: 100vh;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.table-display {
+    margin-top: 50px;
 }

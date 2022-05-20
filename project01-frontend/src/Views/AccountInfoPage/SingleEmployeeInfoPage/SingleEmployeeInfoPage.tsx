@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "../../../Components/Navbar/Navbar";
 import { SingleEmployeeInfo } from "../../../Components/SingleEmployeeInfo/SingleEmployeeInfo";
 import { IUser } from "../../../Interfaces/IUser";
 import { RootState } from "../../../store";
+
+import "./SingleEmployeeInfoPage.css";
 
 export const SingleEmployeeInfoPage : React.FC = () => {
     
@@ -19,7 +21,10 @@ export const SingleEmployeeInfoPage : React.FC = () => {
     return(
         <>
             <Navbar />
+            <div className="info-container">
             { userState !== undefined ? <SingleEmployeeInfo {...userState} /> : <></> }
+            <button className="edit-btn"><Link to ={`/employee/${userState?.username}/edit`} className="edit-link">Edit</Link></button>
+            </div>
         </>
     )
 }

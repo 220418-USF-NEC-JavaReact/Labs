@@ -1,12 +1,12 @@
 
 export interface IReimbursement {
-    id?: number,
+    reimburseId?: number,
     amount: number,
-    submitedDate?: string,
+    submittedDate?: string,
     resolvedDate?: string,
     description: string,
-    author?: string,
-    resolver?: string, 
-    status?: string,
+    reimburseAuthor?: string,
+    reimburseResolver?: string, 
+    reimburseStatus?: string,
     reimburseType: string
 }

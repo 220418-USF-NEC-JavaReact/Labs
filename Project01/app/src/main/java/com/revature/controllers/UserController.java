@@ -5,6 +5,7 @@ import com.revature.dao.IUserDao;
 import com.revature.exceptions.DuplicateUsernameException;
 import com.revature.exceptions.PasswordIncorrectException;
 import com.revature.exceptions.UserNotFoundException;
+import com.revature.exceptions.UsernameOrEmailIncorrectException;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import io.javalin.http.Handler;
@@ -52,10 +53,6 @@ public class UserController {
     public Handler handleAccountInfo = ctx -> {
         String user_name = ctx.pathParam("username");
         String username = (String) ctx.req.getSession().getAttribute("username");
-        //int userId = (int) ctx.req.getSession().getAttribute("userId");
-        /*if(username == null){
-            ctx.result("First login to see account info.");
-        }*/
         if(!username.equals(user_name)){
             ctx.status(401);
         }else {
@@ -80,8 +77,14 @@ public class UserController {
         int userId = (int) ctx.req.getSession().getAttribute("userId");
         String role = (String) ctx.req.getSession().getAttribute("role");
         user.setUserId(userId);
-        user.setRole(role);
-        us.updateUserInfo(user);
-        ctx.result("Successfully updated.");
+        try {
+            User updatedUser = us.updateUserInfo(user);
+            if(!((String)ctx.req.getSession().getAttribute("username")).equals(updatedUser.getUsername())){
+                ctx.req.getSession().setAttribute("username", updatedUser.getUsername());
+            }
+            ctx.result(om.writeValueAsString(updatedUser));
+        } catch (UsernameOrEmailIncorrectException e){
+            throw e;
+        }
     };
 }

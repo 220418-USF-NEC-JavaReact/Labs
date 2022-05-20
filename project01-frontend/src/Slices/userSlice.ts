@@ -10,6 +10,7 @@ interface UserSliceState {
     error: boolean,
     isLogged: boolean,
     user?: IUser,
+    userList?: IUser[],
     reimbursement?: IReimbursement,
     reimbursementList?: IReimbursement[]
 }
@@ -37,9 +38,10 @@ export const loginUser = createAsyncThunk(
             console.log(res.data);
             return {
                 userId: res.data.userId,
-                username: res.data.username,
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
+                username: res.data.username,
+                password: res.data.password,
                 email: res.data.email,
                 role: res.data.role
             }
@@ -57,6 +59,32 @@ export const logoutUser = createAsyncThunk(
             const res = axios.get("http://localhost:8000/user/logout");
         } catch(e){
             console.log(e);
+        }
+    }
+)
+
+export const allUserInfo = createAsyncThunk(
+    'user/allUserInfo',
+    async (thunkAPI) => {
+        try{
+            const res = await axios.get('http://localhost:8000/user/allAccountInfo');
+            console.log(res.data);
+            return res.data;
+        } catch(e){
+            return 'something went wrong';
+        }
+    }
+)
+
+export const updateUser = createAsyncThunk(
+    'user/update',
+    async (user:IUser, thunkAPI) => {
+        try{
+            const res = await axios.post('http://localhost:8000/user/updateInfo', user);
+            console.log(res.data);
+            return res.data;
+        } catch(e){
+            return thunkAPI.rejectWithValue('something went wrong');
         }
     }
 )
@@ -126,13 +154,18 @@ export const UserSlice = createSlice({
             state.user = undefined;
             state.isLogged = false;
         });
+        builder.addCase(updateUser.fulfilled, (state, action) => {
+            state.user = action.payload;
+        });
+        builder.addCase(allUserInfo.fulfilled, (state, action) => {
+            state.userList = action.payload;
+        });
         builder.addCase(submitReimbursement.fulfilled, (state, action) => {
             state.reimbursement = action.payload;
         });
         builder.addCase(pendingReimbursement.fulfilled, (state, action) => {
             state.reimbursementList = action.payload;
         });
-        
     }
 })
 

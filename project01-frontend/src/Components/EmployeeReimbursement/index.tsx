@@ -6,15 +6,15 @@ export const EmployeeReimbursement: React.FC<IReimbursement> = (reimbursement) =
     return(
         <>
             <tr>
-                <td>{reimbursement.id}</td>
+                <td>{reimbursement.reimburseId}</td>
                 <td>{reimbursement.amount}</td>
                 <td>{reimbursement.description}</td>
-                <td>{reimbursement.author}</td>
-                <td>{reimbursement.resolver}</td>
-                <td>{reimbursement.submitedDate}</td>
+                <td>{reimbursement.reimburseAuthor}</td>
+                <td>{reimbursement.reimburseResolver}</td>
+                <td>{reimbursement.submittedDate}</td>
                 <td>{reimbursement.resolvedDate}</td>
+                <td>{reimbursement.reimburseStatus}</td>
                 <td>{reimbursement.reimburseType}</td>
-                <td>{reimbursement.status}</td>
             </tr>
         </>
     )

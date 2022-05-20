@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
                 <li className="nav-item">
                     <Link to={`/employee/${user?.username}`} className="nav-link">Account Info</Link>
                 </li>
-                <li className="logout">
+                <li className="logout nav-item">
                     <Link to={"/login"} className="nav-link">
                         <button className="logout-btn" onClick={handleLogout}>Logout</button>
                     </Link>

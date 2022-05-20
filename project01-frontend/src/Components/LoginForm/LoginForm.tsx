@@ -31,13 +31,12 @@ export const Login: React.FC = () => {
     return(
         <div className="login">
             <div className="text-container">
-                <h1 className="login-header">Welcome to SocialHub</h1>
-                <h2 className="login-header">Sign in to see what everyones on about</h2>
+                <h1 className="login-header">Employee Reimbursement System</h1>
             </div>
             <form className="login-form">
                 <div className="input-div">
-                    <h4 className="input-h4">Please Enter Email</h4>
-                    <input autoComplete="off" className="login-input" type="text" placeholder="email" name="username" onChange={handleInput}/>
+                    <h4 className="input-h4">Please Enter Username</h4>
+                    <input autoComplete="off" className="login-input" type="text" placeholder="username" name="username" onChange={handleInput}/>
                 </div>
                 <div className="input-div">
                     <h4 className="input-h4">Please Enter Password</h4>

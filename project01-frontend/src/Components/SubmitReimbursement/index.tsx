@@ -28,18 +28,21 @@ export const SubmitReimbursement: React.FC<IOnSubmit> = ({onSubmitProp}) =>{
         onSubmitProp({amount, description, reimburseType})
     }
     return(
-        <>
-            <form onSubmit={handleOnSubmit}>
-            <label>Amount : </label>
-            <input type="text" id="amount" name="amount" onChange={handleOnChange}/><br></br>
-            <label>Description : </label>
-            <input type="text" id="description" name="description" onChange={handleOnChange}/><br></br>
-            <label>Type : </label>
-            <input type="text" id="type" name="type" onChange={handleOnChange}/><br></br>
-            <input type="submit" value="Submit" />
+        <div className="container">
+            <div className="link-div">
+                <button className="reimburse-btn"><Link to={"/employee/reimbursement/pending"} className="link">Pending Reimbursement</Link></button>
+                <button className="reimburse-btn"><Link to={"/employee/reimbursement/approved"} className="link">Resolved Reimbursement</Link></button>
+            </div>
+            <form className="form-submit" onSubmit={handleOnSubmit}>
+                <h3 className="h3-reimbusement">Submit Reimbursement</h3>
+                <h4 className="h4-reimburse-submit">Amount</h4>
+                <input className="reimburse-input" type="text" id="amount" name="amount" onChange={handleOnChange}/><br></br>
+                <h4 className="h4-reimburse-submit">Description</h4>
+                <input className="reimburse-input" type="text" id="description" name="description" onChange={handleOnChange}/><br></br>
+                <h4 className="h4-reimburse-submit">Type</h4>
+                <input className="reimburse-input" type="text" id="type" name="type" onChange={handleOnChange}/><br></br>
+                <input className="submit-input" type="submit" value="Submit" />
             </form>
-            <button><Link to={"/employee/reimbursement/pending"} className="link">Pending</Link></button>
-            <button><Link to={"/employee/reimbursement/resolved"} className="link">Resolved</Link></button>
-        </>
+        </div>
     )
 }

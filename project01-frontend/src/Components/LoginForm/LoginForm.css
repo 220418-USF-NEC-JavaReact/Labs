@@ -1,23 +1,11 @@
-:root {
-    --bg: #2D2E2E;
-    --dark: #0F0F0F;
-    --btn-blue: #46B1C9;
-    --accent: #23CE6B;
-    --text-white: #FBFBFB;
-  }
-
 .login {
-    width: fit-content;
     height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border-radius: 5px;
     border: 2px solid var(--dark);
     padding: 20px;
 }
 
-.login-header, h4{
+.login-header, .input-h4{
     margin-bottom: 10px;
     text-align: center;
     color: var(--text-white);

@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import com.revature.exceptions.DuplicateUsernameException;
+import com.revature.exceptions.UsernameOrEmailIncorrectException;
 import com.revature.models.User;
 import com.revature.utils.ConnectionSingleton;
 
@@ -22,6 +23,27 @@ public class UserDaoJDBC implements IUserDao{
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,username);
+            ResultSet rs = ps.executeQuery();
+            User user = null;
+            while (rs.next()){
+                user = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
+            }
+            return user;
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public User getUser(int userId) {
+        Connection con = cs.getConnection();
+        String sql = "select u.user_id, u.user_name, u.password, u.first_name, u.last_name, u.email, ur.role " +
+                "from users u, user_roles ur where u.role_id = ur.role_id and user_id = ?";
+
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,userId);
             ResultSet rs = ps.executeQuery();
             User user = null;
             while (rs.next()){
@@ -75,10 +97,9 @@ public class UserDaoJDBC implements IUserDao{
     }
 
     @Override
-    public void updateUser(User user) {
+    public void updateUser(User user) throws UsernameOrEmailIncorrectException {
         Connection con = cs.getConnection();
-        int roleId = user.getRole().equals("Manager") ? 1 : 2;
-        String sql = "update users set user_name=?, password=?, first_name=?, last_name=?, email=?, role_id=? where user_id=?";
+        String sql = "update users set user_name=?, password=?, first_name=?, last_name=?, email=? where user_id=?";
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,user.getUsername());
@@ -86,11 +107,10 @@ public class UserDaoJDBC implements IUserDao{
             ps.setString(3,user.getFirstName());
             ps.setString(4,user.getLastName());
             ps.setString(5,user.getEmail());
-            ps.setInt(6,roleId);
-            ps.setInt(7,user.getUserId());
+            ps.setInt(6,user.getUserId());
             ps.executeUpdate();
         } catch (Exception e){
-            e.printStackTrace();
+            throw new UsernameOrEmailIncorrectException();
         }
     }
 }

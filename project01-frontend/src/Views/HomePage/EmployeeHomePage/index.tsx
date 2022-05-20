@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../../Components/Navbar/Navbar";
 import { RootState } from "../../../store";
 
-
+import "./EmployeeHomePage.css";
 
 export const EmployeeHomePage: React.FC = () =>{
 
@@ -19,7 +19,7 @@ export const EmployeeHomePage: React.FC = () =>{
     return(
         <>
             <Navbar/>
-            <h1>Welcome {userState?.firstName} {userState?.lastName}</h1>
+            <h1 className="h1-welcome">Welcome {userState?.firstName} {userState?.lastName}</h1>
         </>
     )
 }

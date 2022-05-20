@@ -12,6 +12,7 @@ import com.revature.dao.UserDaoJDBC;
 import com.revature.exceptions.DuplicateUsernameException;
 import com.revature.exceptions.PasswordIncorrectException;
 import com.revature.exceptions.UserNotFoundException;
+import com.revature.exceptions.UsernameOrEmailIncorrectException;
 import com.revature.models.Reimbursement;
 import com.revature.services.ReimbursementService;
 import com.revature.services.UserService;
@@ -60,6 +61,10 @@ public class Driver
            ctx.result(e.getMessage());
         });
         server.exception(PasswordIncorrectException.class, (e,ctx) ->{
+            ctx.status(401);
+            ctx.result(e.getMessage());
+        });
+        server.exception(UsernameOrEmailIncorrectException.class, (e,ctx) -> {
             ctx.status(401);
             ctx.result(e.getMessage());
         });

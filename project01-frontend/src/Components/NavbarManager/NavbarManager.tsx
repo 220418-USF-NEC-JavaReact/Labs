@@ -32,9 +32,9 @@ export const NavbarManager: React.FC = () => {
                     <Link to={"/reimbursement/employee"} className="nav-link">Reimbursement</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/employees"} className="nav-link">Employees Ac Info</Link>
+                    <Link to={"/manager/employeesinfo"} className="nav-link">Employees Ac Info</Link>
                 </li>
-                <li className="logout">
+                <li className="nav-item logout">
                     <Link to={"/login"} className="nav-link">
                         <button className="logout-btn" onClick={handleLogout}>Logout</button>
                     </Link>
