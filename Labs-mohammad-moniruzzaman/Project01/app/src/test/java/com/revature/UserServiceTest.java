@@ -1,5 +1,6 @@
 package com.revature;
 import com.revature.exceptions.DuplicateUsernameException;
+import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.UsernameOrEmailIncorrectException;
 import com.revature.exceptions.UsernameOrPasswordIncorrectException;
 import com.revature.models.User;
@@ -67,6 +68,23 @@ public class UserServiceTest {
 
     }
 
+    @Test(expected=UsernameOrPasswordIncorrectException.class)
+    public void wrongUsernameOrIncorrectPasswordTest() throws UsernameOrPasswordIncorrectException {
+        User user1 = new User(1,"Username", "password", "firstName", "lastName", "test@email.com", "Employee");
+        User wrongUser1 = new User(1,"Username", "password123", "firstName", "lastName", "test1@email.com", "Manager");
+
+        when(ud.getUser(wrongUser1.getUsername())).thenReturn(user1);
+        us.loginUser(wrongUser1);
+    }
+
+    @Test(expected=UserNotFoundException.class)
+    public void noUsernameFoundTest() throws UsernameOrPasswordIncorrectException {
+        User wrongUser1 = new User(1,"Username123", "password123", "firstName", "lastName", "test1@email.com", "Manager");
+
+        when(ud.getUser(wrongUser1.getUsername())).thenReturn(null);
+        us.loginUser(wrongUser1);
+    }
+
     //
     @Test
     public void getUserInfoTest(){
@@ -92,7 +110,7 @@ public class UserServiceTest {
         assertEquals(updateUserInfo, actualNewUser);
     }
 
-    //Manage role service class
+
 
     // Method to view all employees
     @Test
@@ -121,4 +139,7 @@ public class UserServiceTest {
         assertEquals(employeeList, actualList);
 
     }
+
+
+
 }
