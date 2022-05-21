@@ -1,0 +1,8 @@
+
+]
+java:S2095""GUse try-with-resources or close this "Statement" in a "finally" clause.(ìƒ®Ÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àø„˜úÿÿÿÿ
+Z	java:S106("9Replace this use of System.out or System.err by a logger.(›Œ‹ƒùÿÿÿÿ8É£ı‰0
+H
+java:S1168-"+Return an empty collection instead of null.(¥¹ï8ŒæÔ‰0

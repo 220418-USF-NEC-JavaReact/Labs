@@ -1,5 +1,6 @@
 package revature.com.dao;
-
+// Coding by Bok-Man Victor Siu
+import revature.com.models.ApproveOrDenyReimbursement;
 import revature.com.models.Reimbursement;
 import revature.com.models.SubmitReimbursement;
 import revature.com.utils.ConnectionSingleton;
@@ -11,18 +12,18 @@ public interface IReimbursementDao {
 
     public void submitReimbursementRequest(SubmitReimbursement request);
 
-    public Reimbursement viewPendingReimbursement();
+    public List<Reimbursement> viewPendingReimbursement(int userId);
 
-    public Reimbursement viewResolvedReimbursement();
+    public List<Reimbursement> viewResolvedReimbursement(int userId);
 
 
     // For manager
-    public void approveReimbursement();
+    public void approveReimbursement(int userId, ApproveOrDenyReimbursement approveOrDenyRequest);
 
     public List<Reimbursement> viewAllPendingRequests();
 
     public List<Reimbursement> viewAllResolvedRequests();
 
-    public List<Reimbursement> viewAllSpecificRequests ();
+    public List<Reimbursement> viewAllSpecificRequests (int searchUserId);
 
 }

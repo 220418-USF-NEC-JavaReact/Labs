@@ -1,6 +1,7 @@
 package revature.com.services;
-
+// Coding by Bok-Man Victor Siu
 import revature.com.dao.IUserDao;
+import revature.com.models.ChangeInfoUser;
 import revature.com.models.RegisterUsers;
 import revature.com.models.Users;
 
@@ -21,12 +22,11 @@ public class UserService {
 
     // Method to login in
     public Users loginUser(String username, String password){
+        Users user = ud.getUserInfo(username);
 
-        Users user = null;
         if(user!=null){
-            // Write the method to return password
+            // Write the method to check password
             if(password.equals(user.getPassword())){
-
                 return user;
             } else {
                 return null;
@@ -35,24 +35,14 @@ public class UserService {
             return null;
         }
     }
-    // Method to logout
-    public Users logoutUser(){
-        return null;
-    }
-
-    // Method to check the role in order to display home page
-    // And the permission of users
-    public boolean checkManager(){
-        return ud.checkRole();
-    }
 
     // View my account information
     public Users getUserInfo(String username){
         return ud.getUserInfo(username);
     }
     // Method to update account information
-    public Users updateUserInfo(RegisterUsers user){
-        return ud.updateUserInfo(user);
+    public Users updateUserInfo(int userIdNum, ChangeInfoUser changeInfoUser){
+        return ud.updateUserInfo(userIdNum, changeInfoUser);
     }
 
     //Manage role service class

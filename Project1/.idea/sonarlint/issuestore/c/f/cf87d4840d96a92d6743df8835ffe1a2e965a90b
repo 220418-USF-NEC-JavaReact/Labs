@@ -1,0 +1,24 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+b
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(œ©ûÿÿÿÿ
+j
+java:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×Êı‰ÿÿÿÿÿ
+q
+java:S2095_"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(®×¡ƒøÿÿÿÿ8îï®©‹0
+j
+java:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×Êı‰ÿÿÿÿÿ
+j
+java:S2095t"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×Êı‰ÿÿÿÿÿ
+P
+java:S1117"5Rename "c" which hides the field declared at line 16.(şá¹¢øÿÿÿÿ
+P
+java:S11174"5Rename "c" which hides the field declared at line 16.(şá¹¢øÿÿÿÿ
+P
+java:S1117K"5Rename "c" which hides the field declared at line 16.(şá¹¢øÿÿÿÿ
+P
+java:S1117o"5Rename "c" which hides the field declared at line 16.(şá¹¢øÿÿÿÿ
+B
+java:S1168‚"+Return an empty collection instead of null.(¥¹ï
+`
+java:S1128">Remove this unused import 'revature.com.models.RegisterUsers'.(‰¢ÌØüÿÿÿÿ8±áÓ©‹0

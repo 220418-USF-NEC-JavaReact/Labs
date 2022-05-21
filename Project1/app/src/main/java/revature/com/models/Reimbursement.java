@@ -16,6 +16,20 @@ public class Reimbursement {
     public Reimbursement(){
 
     }
+    // Pending request
+    public Reimbursement(int reimbursementId, int amount, Date submittedDate, String description, int reimbursementAuthor, int reimbursementStatus, int reimbursementType){
+        this.reimbursementId = reimbursementId;
+        this.amount = amount;
+        this.submittedDate = submittedDate;
+
+        this.description = description;
+        this.reimbursementAuthor = reimbursementAuthor;
+
+        this.reimbursementStatus = reimbursementStatus;
+        this.reimbursementType = reimbursementType;
+
+    }
+    // Resolving request
     public Reimbursement(int reimbursementId, int amount, Date submittedDate, Date resolvedDate, String description, int reimbursementAuthor, int reimbursementResolver, int reimbursementStatus, int reimbursementType){
         this.reimbursementId = reimbursementId;
         this.amount = amount;

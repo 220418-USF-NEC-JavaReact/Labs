@@ -13,15 +13,17 @@ public class SubmitReimbursement {
     public SubmitReimbursement(){
 
     }
-    public SubmitReimbursement(int amount, Date submittedDate, String description, int reimbursementAuthor, int reimbursementStatus, int reimbursementType){
+    public SubmitReimbursement(int amount,  String description, int reimbursementType){
 
         this.amount = amount;
-        this.submittedDate = submittedDate;
-
+        // Date would use
+        // Date d = new Date(Instant.now().toEpochMilli());
+        this.submittedDate = null;
         this.description = description;
-        this.reimbursementAuthor = reimbursementAuthor;
-
-        this.reimbursementStatus = reimbursementStatus;
+        // Will set the author id in controller class
+        this.reimbursementAuthor = 0;
+        // 1 is Pending in status
+        this.reimbursementStatus = 1;
         this.reimbursementType = reimbursementType;
 
     }

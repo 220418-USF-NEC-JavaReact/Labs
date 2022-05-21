@@ -1,5 +1,6 @@
 package revature.com.dao;
-
+// Coding by Bok-Man Victor Siu and Mohammad
+import revature.com.models.ChangeInfoUser;
 import revature.com.models.RegisterUsers;
 import revature.com.models.Users;
 
@@ -17,14 +18,14 @@ public interface IUserDao {
     public Users logoutUser();
 
 
-    public boolean checkRole();
+    public boolean checkManager();
 
 
 
     public Users getUserInfo(String username);
 
 
-    public Users updateUserInfo(RegisterUsers user);
+    public Users updateUserInfo(int userIdNum, ChangeInfoUser changeInfoUser);
 
 
     public List<Users> viewAllEmployees();

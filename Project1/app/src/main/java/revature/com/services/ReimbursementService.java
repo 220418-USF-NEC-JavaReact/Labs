@@ -1,9 +1,12 @@
 package revature.com.services;
-
+// Coding by Bok-Man Victor Siu
 import revature.com.dao.IReimbursementDao;
+import revature.com.models.ApproveOrDenyReimbursement;
 import revature.com.models.Reimbursement;
 import revature.com.models.SubmitReimbursement;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 public class ReimbursementService {
@@ -15,21 +18,25 @@ public class ReimbursementService {
 
     // For employees
     public void submitReimbursementRequest(SubmitReimbursement request){
+        Date today = new Date(Instant.now().toEpochMilli());
+        request.setSubmittedDate(today);
+        // 1 is pending status
+        request.setReimbursementStatus(1);
         rd.submitReimbursementRequest(request);
     }
 
-    public Reimbursement viewPendingReimbursement(){
-        return rd.viewPendingReimbursement();
+    public List<Reimbursement> viewPendingReimbursement(int userId){
+        return rd.viewPendingReimbursement(userId);
     }
 
-    public Reimbursement viewResolvedReimbursement(){
-        return rd.viewResolvedReimbursement();
+    public List<Reimbursement> viewResolvedReimbursement(int userId){
+        return rd.viewResolvedReimbursement(userId);
     }
 
 
     // For manager
-    public void approveReimbursement(){
-        rd.approveReimbursement();
+    public void approveReimbursement(int userId, ApproveOrDenyReimbursement approveOrDenyRequest){
+        rd.approveReimbursement(userId, approveOrDenyRequest);
     }
 
     public List<Reimbursement> viewAllPendingRequests(){
@@ -40,8 +47,8 @@ public class ReimbursementService {
         return rd.viewAllResolvedRequests();
     }
     // Method to view reimbursement requests of a specific employee
-    public List<Reimbursement> viewAllSpecificRequests (){
-        return rd.viewAllSpecificRequests();
+    public List<Reimbursement> viewAllSpecificRequests (int searchUserId){
+        return rd.viewAllSpecificRequests(searchUserId);
     }
 
 

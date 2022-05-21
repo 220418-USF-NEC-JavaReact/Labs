@@ -14,6 +14,9 @@ import revature.com.models.Reimbursement;
 import revature.com.services.ReimbursementService;
 import revature.com.services.UserService;
 
+import static io.javalin.apibuilder.ApiBuilder.*;
+import static io.javalin.apibuilder.ApiBuilder.post;
+
 public class Drive {
     public String getGreeting() {
         return "Hello World!";
@@ -33,10 +36,42 @@ public class Drive {
 
         ReimbursementController rc = new ReimbursementController(rs);
 
+
+
         Javalin server = Javalin.create(config -> {
             config.enableCorsForAllOrigins();
         });
 
+        server.before(ctx -> ctx.header("Access-Control-Allow-Credentials", "true"));
+        server.before(ctx -> ctx.header("Access-Control-Expose-Headers", "*"));
+
+        server.routes(()-> {
+            path("users", () -> {
+
+                post("/register", uc.handleRegisterUser);
+                post("/login", uc.handleLoginUser);
+                get("/logout", uc.handleLogout);
+                get("/viewInfo", uc.handleShowUserByUserName);
+                post("/update", uc.handleUpdateUser);
+
+                // Manager only
+                get("/showAllByManager", uc.handlerShowAllByManager);
+
+            });
+            path("reimbursement", () -> {
+                post("/sendRequest", rc.handlerReimbursementRequest);
+                get("/viewPendingReimbursement", rc.handlerViewPendingReimbursement);
+                get("/viewResolvedReimbursement", rc.handlerViewResolvedReimbursement);
+
+                // Manager only
+                post("/approveOrDeny", rc.handlerApproveReimbursement);
+                get("/showAllPendingByManager", rc.handlerViewAllPendingRequests);
+                get("/showAllResolvedByManager", rc.handlerViewAllResolvedRequests);
+                get("/showSpecificEmployee", rc.handlerViewAllSpecificRequests);
+
+
+            });
+        });
         server.start(8080);
     }
 }

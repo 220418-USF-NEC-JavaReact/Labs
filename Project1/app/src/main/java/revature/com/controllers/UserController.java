@@ -1,11 +1,13 @@
 package revature.com.controllers;
-
+// Coding by Bok-Man Victor Siu and Mohammad
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.http.Handler;
+import revature.com.models.ChangeInfoUser;
 import revature.com.models.LoginUsers;
 import revature.com.models.RegisterUsers;
 import revature.com.services.UserService;
 import revature.com.models.Users;
+
 
 public class UserController {
     
@@ -53,9 +55,10 @@ public class UserController {
             //
             //We could also, if the user is logged in successfully, set up a session for them
             ctx.req.getSession().setAttribute("username", ""+u.getUsername());
+            ctx.req.getSession().setAttribute("id", ""+u.getUserId());
             ctx.result(om.writeValueAsString(u.getUsername() + " has been login. "));
             // Set the attribute if the user is manager
-            if (us.checkManager() == true){
+            if (u.getRole() == 1){
                 ctx.req.getSession().setAttribute("manager", ""+u.getUsername());
             }
         }
@@ -70,11 +73,11 @@ public class UserController {
         } else {
             //We could also, if the user is logged in successfully, set up a session for them
             // Return null from us.logoutUser()
-            ctx.req.getSession().setAttribute("username", us.logoutUser());
-
+            ctx.req.getSession().setAttribute("username", null);
+            ctx.req.getSession().setAttribute("id", null);
             // clear the session attribute of manager
             if (ctx.req.getSession().getAttribute("manager") != null) {
-                ctx.req.getSession().setAttribute("manager", us.logoutUser());
+                ctx.req.getSession().setAttribute("manager", null);
             }
             ctx.result(om.writeValueAsString(" You have been logout. "));
         }
@@ -100,19 +103,34 @@ public class UserController {
             ctx.status(401);
             ctx.result("You need to be login.");
         } else {
+            // Once login, input, and then run update
             String username = (String) ctx.req.getSession().getAttribute("username");
 
-            RegisterUsers changeInfoUser = om.readValue(ctx.body(), RegisterUsers.class);
-            if(username != changeInfoUser.getUsername()){
-                ctx.result(om.writeValueAsString("Input username is not matching current username"));
-            } else {
-                us.updateUserInfo(changeInfoUser);
-                ctx.result(om.writeValueAsString("User information has been changed, \t\n " + us.getUserInfo(username)));
-                ctx.status(200);
+            // Get current userId
+            String userId = (String) ctx.req.getSession().getAttribute("id");
+            int userIdNum = Integer.parseInt(userId);
 
-            }
+            // Get input
+            ChangeInfoUser changeInfoUser = om.readValue(ctx.body(), ChangeInfoUser.class);
+
+
+            // Run service
+            us.updateUserInfo(userIdNum, changeInfoUser);
+
+
+
+            ctx.status(200);
+            // If change the role to manager
+            Users newInfo = us.getUserInfo(changeInfoUser.getUsername());
+            ctx.req.getSession().setAttribute("username", ""+changeInfoUser.getUsername());
+            ctx.result(om.writeValueAsString("Your user information has been changed, new username should be " + newInfo.getUsername()));
+
+
+
 
         }
+
+
     };
 
     public Handler handlerShowAllByManager = (ctx) -> {

@@ -1,0 +1,43 @@
+
+c
+java:S1192P"HDefine a constant instead of duplicating this literal "manager" 4 times.(õ—¨»ıÿÿÿÿ
+l
+java:S1192R"VDefine a constant instead of duplicating this literal "You must be manager. " 4 times.(’‚ç›
+|
+java:S1192!"aDefine a constant instead of duplicating this literal "You must login to submit request" 7 times.(£ÿò¬ıÿÿÿÿ
+_
+java:S1192"IDefine a constant instead of duplicating this literal "username" 8 times.(ïˆ’“
+‚
+java:S1104"gMake handlerReimbursementRequest a static final constant or non-public and provide accessors if needed.(¶£øãùÿÿÿÿ
+
+java:S11040"kMake handlerViewPendingReimbursement a static final constant or non-public and provide accessors if needed.(ãí€
+‡
+java:S1104<"lMake handlerViewResolvedReimbursement a static final constant or non-public and provide accessors if needed.(«ğ¤®şÿÿÿÿ
+}
+java:S1104K"gMake handlerApproveReimbursement a static final constant or non-public and provide accessors if needed.(ı„‚Ç
+„
+java:S1104j"iMake handlerViewAllPendingRequests a static final constant or non-public and provide accessors if needed.(×Ìùàıÿÿÿÿ
+…
+java:S1104y"jMake handlerViewAllResolvedRequests a static final constant or non-public and provide accessors if needed.(±‘‚ãÿÿÿÿÿ
+†
+java:S1104†"jMake handlerViewAllSpecificRequests a static final constant or non-public and provide accessors if needed.(ÊÆ¡øÿÿÿÿ
+L
+java:S1611"1Remove the parentheses around the "ctx" parameter(¶£øãùÿÿÿÿ
+G
+java:S16110"1Remove the parentheses around the "ctx" parameter(ãí€
+C
+java:S14815"-Remove this unused "username" local variable.(–Î
+L
+java:S1611<"1Remove the parentheses around the "ctx" parameter(«ğ¤®şÿÿÿÿ
+G
+java:S1611K"1Remove the parentheses around the "ctx" parameter(ı„‚Ç
+L
+java:S1611j"1Remove the parentheses around the "ctx" parameter(×Ìùàıÿÿÿÿ
+L
+java:S1611y"1Remove the parentheses around the "ctx" parameter(±‘‚ãÿÿÿÿÿ
+M
+java:S1611†"1Remove the parentheses around the "ctx" parameter(ÊÆ¡øÿÿÿÿ
+`
+java:S1128">Remove this unused import 'revature.com.models.Reimbursement'.(¨Ó‚€ıÿÿÿÿ8š·İš‹0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8š·İš‹0

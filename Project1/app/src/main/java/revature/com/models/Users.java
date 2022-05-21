@@ -1,5 +1,5 @@
 package revature.com.models;
-
+// Coding by Bok-Man Victor Siu and Mohammad
 public class Users {
     private int userId;
     private String username;
